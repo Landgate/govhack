@@ -1,9 +1,9 @@
 GovHack 2015
 ============
 
-Hi there,
+Hi there GovHacker,
 
-Herein you shall find a collection of resources to help you use Landgate's SLIP platform in your GovHack 2015 project. For the technically curious, our SLIP platform is based on [Google Maps Engine](https://www.google.com/enterprise/mapsearth/products/mapsengine.html).
+Herein you shall find a collection of resources to help you use Landgate's SLIP platform in your GovHack 2015 project.
 
 
 # What is SLIP?
@@ -14,7 +14,7 @@ The delivery of the new SLIP platform began in 2013 with the launch of [locate.w
 
 
 # Help?
-Confused? Can't find data? Contact [Keith Moss](https://twitter.com/kevin_rudds_cat), or any of Landgate's other mentors who are on site.
+Confused? Can't find data? Contact [Keith Moss](https://twitter.com/kevin_rudds_cat), or any of Landgate's other mentors who are on-site in Perth.
 
 
 # What is available?
@@ -37,7 +37,7 @@ Further explanations of what these APIs do, and how to use them, can be found be
 ## Available datasets, finding data
 Trying to list all of the data in SLIP would just result in a huge unordered list, so instead we'll just give you a taste of what's available here. To search for specific data head over to [slip.landgate.wa.gov.au](http://slip.landgate.wa.gov.au/) (remember to use the advanced search functionality to include "Vector Data" in your search results).
 
-> NB: If you see a datasets you would like to use for GovHack that isn't public get in touch with one of our mentors and we may be able to give you special access for GovHack.
+> NB: If you see a datasets you would like to use for GovHack that aren't public get in touch with one of our mentors and we may be able to give you special access for GovHack.
 
 Our public map services contain a wealth of data from over thirty Western Australia Government, including:
 
@@ -98,9 +98,9 @@ Subscription data available includes:
 * Points of Interest
 
 
-# I don't understand the data!
+# What does this column in the dataset mean?
 
-If you're having trouble understanding any of our data check out our [data dictionaries](http://www.landgate.wa.gov.au/corporate.nsf/web/SLIP+Data+Dictionary) resource for in-depth descriptions of our core datasets.
+If you're having trouble understanding any of our data check out our [data dictionaries](http://www.landgate.wa.gov.au/corporate.nsf/web/SLIP+Data+Dictionary) resource for in-depth descriptions of our core datasets. There are also mentors from a whole [range of Western Australian government agencies](http://perth.govhack.org/mentors.html) in attendance who will be happy to explain their data to you.
 
 
 # How can I use SLIP in my project?
