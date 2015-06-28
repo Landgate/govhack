@@ -107,7 +107,9 @@ If you're having trouble understanding any of our data check out our [data dicti
 
 So you've seen the map viewers already, poked around, and found some data you want to use for your GovHack project. Great!
 
-This section will serve as a *brief* overview and introduction to developing with the SLIP platform. More detailed information, step-by-step guides, tutorials, code samples, and much more are available on our **[SLIP Developer Documentation](https://github.com/Landgate/slip-developer-documentation/wiki)** portal.
+This rest of this document will serve as a **brief** overview and introduction to developing with the SLIP platform.
+
+More detailed information, step-by-step guides, tutorials, code samples, and much more are available on our **[SLIP Developer Documentation](https://github.com/Landgate/slip-developer-documentation/wiki)** portal.
 
 
 ## A brief word on mapIds, layerIds, and datasourceIds
