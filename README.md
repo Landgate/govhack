@@ -3,7 +3,7 @@ GovHack 2015
 
 Hi there GovHacker,
 
-Herein you shall find a collection of resources to help you use Landgate's SLIP platform in your GovHack 2015 project.
+Herein you shall find a collection of resources to help you use Landgate's SLIP plincludlingatform in your GovHack 2015 project.
 
 
 # What is SLIP?
@@ -60,7 +60,7 @@ Our public map services contain a wealth of data from over thirty Western Austra
 * Environmental data, including:
   * Regionally Significant Natural Areas (Swan Bioplan)
   * Supporting Information for Environmental Referral (EPA)
-* Mining and resources data, includling:
+* Mining and resources data, including:
   * Mineral drillholes and geothermal releases and titles
   * Mines and mineral deposits, mining tenements
   * Petroleum title, wells, applications, pipelines, and releases
@@ -77,7 +77,7 @@ Our public map services contain a wealth of data from over thirty Western Austra
 
 ## Developer Sandbox
 
-Our [SLIP Academy](https://groups.google.com/forum/#!forum/slip-academy) Developer Sandbox Service is a private service setup to allow developers to experiment with a geographically clipped range of datasets, including data usually reserved for subscribers SLIP. Data are clipped to cover the new suburbs around Clarkson, within an area stretching from Tamala Park in the south to Eglinton in the north.
+Our [SLIP Academy](https://groups.google.com/forum/#!forum/slip-academy) Developer Sandbox Service is a private service setup to allow developers to experiment with a geographically clipped range of datasets, including data usually limited to subscribers to SLIP. Data are clipped to cover the new suburbs around Clarkson, within an area stretching from Tamala Park in the south to Eglinton in the north.
 
 * Aerial photography from 1956 - 2013.
 * Infrastructure, including:
