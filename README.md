@@ -3,7 +3,7 @@ GovHack 2015
 
 Hi there GovHacker,
 
-Herein you shall find a collection of resources to help you use Landgate's SLIP plincludlingatform in your GovHack 2015 project.
+Herein you shall find a collection of resources to help you use Landgate's SLIP platform in your GovHack 2015 project.
 
 
 # What is SLIP?
