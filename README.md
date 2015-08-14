@@ -213,5 +213,5 @@ If you have data you want to load into a system to render and map you're spoilt 
 
 * [Google Maps Engine](http://mapsengine.google.com) (as noted earlier - our development environment is available).
 * [CartoDB](http://cartodb.com/)
-* [TileMill](https://www.mapbox.com/tilemill/)
+* [Mapbox Studio ](https://www.mapbox.com/mapbox-studio/)
 * [MangoMap](http://mangomap.com/)
