@@ -41,11 +41,11 @@ Throughout data.wa.gov.au and this document you'll find reference to various tec
 
 *[Web Mapping Service (WMS)](https://en.wikipedia.org/wiki/Web_Map_Service):* A service for generating sets of image tiles used in web mapping. It converts raw spatial datasets into georeferenced images and is a widely used international open standard; as well it supports querying the data ("Tell me about the features at a point"). WMS services available via data.wa.gov.au are served through SLIP.
 
-*[Web Feature Service (WFS)](https://en.wikipedia.org/wiki/Web_Feature_Service):* A service for retrieving raw geospatial datasets and running queries against a dataset (e.g. "Tell me all of the points in this area where the `type` is 'red'."). Unlike a WMS the output of a WFS service must first be passed to software that can visualise spatial data (See @TODO). WFS services available via data.wa.gov.au are served through SLIP.
+*[Web Feature Service (WFS)](https://en.wikipedia.org/wiki/Web_Feature_Service):* A service for retrieving raw geospatial datasets and running queries against a dataset (e.g. "Tell me all of the points in this area where the `type` is 'red'."). Unlike a WMS the output of a WFS service must first be passed to software that can visualise spatial data. WFS services available via data.wa.gov.au are served through SLIP.
 
 *[ESRI REST API](http://resources.arcgis.com/en/help/arcgis-rest-api/#/The_ArcGIS_REST_API/02r300000054000000/):* A service similar very similar in functionality to WMS and WFS that is available from using the [ESRI](http://www.esri.com/) technology stack. This resource provides a machine-readable ESRI REST API for visualising and accessing this dataset. This API can be used in a variety of ESRI products – including ArcGIS, ArcGIS Pro, and the ArcGIS API for JavaScript. ESRI REST API services available via data.wa.gov.au are served through SLIP.
 
-*[Shapefile](https://en.wikipedia.org/wiki/Shapefile):* An older but still very popular format for spatial datasets. Easy to read, manipulate, and convert to other data formats using spatial software packages (@TODO).
+*[Shapefile](https://en.wikipedia.org/wiki/Shapefile):* An older but still very popular format for spatial datasets. Easy to read, manipulate, and convert to other data formats using spatial software packages.
 
 *[Service Map Package](https://blogs.esri.com/esri/arcgis/2010/09/29/map-packages/):* A proprietary format created by the spatial sofware company, [ESRI](http://www.esri.com/), for storing spatial data and their associated styles. Only acessible to users with ArcGIS Desktop or ArcGIS Pro.
 
@@ -98,9 +98,6 @@ If your goal is to quickly explore and see what data is available then there are
 
 - The [NationalMap](http://nationalmap.gov.au/) provided map-based access to spatial datasets across all levels of Australia Federal, state, and local governments.
 
-@TODO PAASy Maps?
-  * [Web AppBuilder for ArcGIS](http://doc.arcgis.com/en/web-appbuilder/): Build powerful GIS apps that run on any device. No coding required.
-
 
 ## The Analyst
 If your focus is actually getting at the raw data itself, running queries against it, and analysing it then you have the choice of downloading data and analysing it locally, or using our APIs to do the heavy lifting for you.
@@ -148,7 +145,7 @@ There's a wide range of different tools available to help you query, visualise, 
 * *Web & mobile mapping libraries:*
  * [OpenLayers](http://openlayers.org/): A high-performance, feature-packed library for all your web mapping needs. OpenLayers makes it easy to put a dynamic map in any web page. It can display map tiles, vector data and markers loaded from any source. OpenLayers has been developed to further the use of geographic information of all kinds.
  * [Leaflet](http://leafletjs.com/): Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. Leaflet is designed with simplicity, performance and usability in mind. It works efficiently across all major desktop and mobile platforms.
- * [ArcGIS for Developers](https://developers.arcgis.com/): Bring the power of location to your apps with ArcGIS – a mapping platform accessible to developers. Create and manage geospatial apps regardless of your developer experience. Build web, mobile, and desktops apps that incorporate mapping, visualization, analysis, and more.
+ * [ArcGIS for Developers](https://developers.arcgis.com/): Bring the power of location to your apps with ArcGIS – a mapping platform accessible to developers. Create and manage geospatial apps regardless of your developer experience. Build web, mobile, and desktops apps that incorporate mapping, visualization, analysis, and more. ESRI also has an [awesome GitHub portal for developers](http://esri.github.io/).
  * [CARTO.js](https://carto.com/docs/carto-engine/carto-js/) (formerly CartoDB.js): CARTO.js is a simple unified JavaScript library that interacts with the CARTO Engine service. This library enables you to connect to your stored visualizations, create new visualizations, add custom interaction, and access or query raw data from a web browser.
  * [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/): Start with the maps your users love, add the data developers trust. Build a custom map for your site using styled maps, 3D buildings, indoor floor plans, multi-modal directions and more.
  * [MapBox for Developers](https://www.mapbox.com/developers/): Mapbox is the mapping platform for developers. Build maps and applications on our simple and powerful APIs, and use our open source libraries for interactivity and control.
@@ -177,7 +174,7 @@ There's a wide range of different tools available to help you query, visualise, 
 * *Web & mobile mapping libraries:*
  * [OpenLayers](http://openlayers.org/): A high-performance, feature-packed library for all your web mapping needs. OpenLayers makes it easy to put a dynamic map in any web page. It can display map tiles, vector data and markers loaded from any source. OpenLayers has been developed to further the use of geographic information of all kinds.
  * [Leaflet](http://leafletjs.com/): Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. Leaflet is designed with simplicity, performance and usability in mind. It works efficiently across all major desktop and mobile platforms.
- * [ArcGIS for Developers](https://developers.arcgis.com/): Bring the power of location to your apps with ArcGIS – a mapping platform accessible to developers. Create and manage geospatial apps regardless of your developer experience. Build web, mobile, and desktops apps that incorporate mapping, visualization, analysis, and more.
+ * [ArcGIS for Developers](https://developers.arcgis.com/): Bring the power of location to your apps with ArcGIS – a mapping platform accessible to developers. Create and manage geospatial apps regardless of your developer experience. Build web, mobile, and desktops apps that incorporate mapping, visualization, analysis, and more. ESRI also has an [awesome GitHub portal for developers](http://esri.github.io/).
  * [CARTO.js](https://carto.com/docs/carto-engine/carto-js/) (formerly CartoDB.js): CARTO.js is a simple unified JavaScript library that interacts with the CARTO Engine service. This library enables you to connect to your stored visualizations, create new visualizations, add custom interaction, and access or query raw data from a web browser.
  * [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/): Start with the maps your users love, add the data developers trust. Build a custom map for your site using styled maps, 3D buildings, indoor floor plans, multi-modal directions and more.
  * [MapBox for Developers](https://www.mapbox.com/developers/): Mapbox is the mapping platform for developers. Build maps and applications on our simple and powerful APIs, and use our open source libraries for interactivity and control.
