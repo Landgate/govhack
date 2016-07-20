@@ -77,7 +77,7 @@ More general information about SLIP is available at [slip.landgate.wa.gov.au](ht
 We love user-centred design, so we've written this guide for three different user personas.
 
 1. *[The Strategist](#the-strategist):* I want to look at datasets on a map, to explore what's available, and think about how I can use data at a high-level.
-2. *[The Analyst](#the-analyst]:* I need to download whole datasets and use them in their raw form to analyse and interrogate them. I'm comfortable using analysis and visualisation software.
+2. *[The Analyst](#the-analyst):* I need to download whole datasets and use them in their raw form to analyse and interrogate them. I'm comfortable using analysis and visualisation software.
 3. *[The Developer](#the-developer):* I need to design and create maps or geospatial applications for the web and mobile platforms. I'm a developer and I'm comfortable in the world of APIs and software developmemt. I'd prefer to use other people's data APIs to query and visualise data.
 
 ## Technical assistance with SLIP
