@@ -27,7 +27,7 @@ Over 700 datasets from more than 40 WA government agencies are available at [dat
 * Geological and teophysical data
 * Power and water utilities data
 
-## Help and Mentors
+## Help and mentors
 Confused? Can't find data? Contact [our friendly team of mentors](http://portal.govhack.org/regions/western_australia.html#mentors) from across WA government who'll be available on-site in Perth, and around the country on Slack.
 
 ### I can't find the dataset I want
@@ -43,7 +43,7 @@ Throughout data.wa.gov.au and this document you'll find reference to various tec
 
 *[Web Feature Service (WFS)](https://en.wikipedia.org/wiki/Web_Feature_Service):* A service for retrieving raw geospatial datasets and running queries against a dataset (e.g. "Tell me all of the points in this area where the `type` is 'red'."). Unlike a WMS the output of a WFS service must first be passed to software that can visualise spatial data (See @TODO). WFS services available via data.wa.gov.au are served through SLIP.
 
-*ESRI REST API:* A service similar very similar in functionality to WMS and WFS that is available from using the [ESRI](http://www.esri.com/) technology stack. This resource provides a machine-readable ESRI REST API for visualising and accessing this dataset. This API can be used in a variety of ESRI products – including ArcGIS, ArcGIS Pro, and the ArcGIS API for JavaScript. ESRI REST API services available via data.wa.gov.au are served through SLIP.
+*[ESRI REST API](http://resources.arcgis.com/en/help/arcgis-rest-api/#/The_ArcGIS_REST_API/02r300000054000000/):* A service similar very similar in functionality to WMS and WFS that is available from using the [ESRI](http://www.esri.com/) technology stack. This resource provides a machine-readable ESRI REST API for visualising and accessing this dataset. This API can be used in a variety of ESRI products – including ArcGIS, ArcGIS Pro, and the ArcGIS API for JavaScript. ESRI REST API services available via data.wa.gov.au are served through SLIP.
 
 *[Shapefile](https://en.wikipedia.org/wiki/Shapefile):* An older but still very popular format for spatial datasets. Easy to read, manipulate, and convert to other data formats using spatial software packages (@TODO).
 
@@ -76,9 +76,9 @@ More general information about SLIP is available at [slip.landgate.wa.gov.au](ht
 
 We love user-centred design, so we've written this guide for three different user personas.
 
-1. *The Strategist:* I want to look at datasets on a map, to explore what's available, and think about how I can use data at a high-level.
-2. *The Analyst:* I need to download whole datasets and use them in their raw form to analyse and interrogate them. I'm comfortable using analysis and visualisation software.
-3. *The Developer:* I need to design and create maps or geospatial applications for the web and mobile platforms. I'm a developer and I'm comfortable in the world of APIs and software developmemt. I'd prefer to use other people's data APIs to query and visualise data.
+1. *[The Strategist](#the-strategist):* I want to look at datasets on a map, to explore what's available, and think about how I can use data at a high-level.
+2. *[The Analyst](#the-analyst]:* I need to download whole datasets and use them in their raw form to analyse and interrogate them. I'm comfortable using analysis and visualisation software.
+3. *[The Developer](#the-developer):* I need to design and create maps or geospatial applications for the web and mobile platforms. I'm a developer and I'm comfortable in the world of APIs and software developmemt. I'd prefer to use other people's data APIs to query and visualise data.
 
 ## Technical assistance with SLIP
 Confused? Don't understand how to do something? Contact [our friendly team of mentors](http://portal.govhack.org/sponsors/landgate.html) who'll be available on-site in Perth, and around the country on Slack.
@@ -110,7 +110,7 @@ Datasets are currently available to download from data.wa.gov.au in two formats 
 
 @TODO Screenshot
 
-See our [Jaron busting guide](#jargon_busting) for a description of the formats.
+See our [Jaron busting guide](#jargon-busting) for a description of the formats.
 
 > *Note:* While most of the datasets downloads are freely available, you will be prompted to sign in when you download a dataset. This helps us to better understand and engage with the end users of our datasets. Simply register an account and login you'll be able to proceed to download your datasets.
 
@@ -139,7 +139,7 @@ Datasets are currently available as live API or web service feeds from data.wa.g
 
 @TODO Screenshot
 
-See our [Jaron busting guide](#jargon_busting) for a description of these APIs.
+See our [Jaron busting guide](#jargon-busting) for a description of these APIs.
 
 There's a wide range of different tools available to help you query, visualise, and use these services:
 
@@ -168,7 +168,7 @@ Datasets are currently available as live API or web service feeds from data.wa.g
 
 @TODO Screenshot
 
-See our [Jaron busting guide](#jargon_busting) for a description of these APIs.
+See our [Jaron busting guide](#jargon-busting) for a description of these APIs.
 
 There's a wide range of different tools available to help you query, visualise, and use these services:
 
