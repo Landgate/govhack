@@ -92,25 +92,66 @@ You may also want to check out the [Working with Geographic Data](http://govhack
 
 
 ## The Strategist
-> NM
+If your goal is to quickly explore and see what data is available then there are a range of pre-packaged maps available that will make that task a breeze.
+
+- A set of themed maps are available for Western Australia covering the themes of [environment, infrastructure, property and more](http://slip.landgate.wa.gov.au/Pages/Public-Maps.aspx).
+
+- The [NationalMap](http://nationalmap.gov.au/) provided map-based access to spatial datasets across all levels of Australia Federal, state, and local governments.
+
 
 ## The Analyst
-If your focus is actually getting at the raw data itself, running queries against it, and analysing it then the [Google Maps Engine API](https://developers.google.com/maps-engine/) is your friend.
+If your focus is actually getting at the raw data itself, running queries against it, and analysing it then you have the choice of downloading data and analysing it locally, or using our APIs to do the heavy lifting for you.
 
-The GME API is a RESTful API that speaks and consumes JSON. Our [Getting Started](https://github.com/Landgate/slip-developer-documentation/wiki/Getting-Started) documentation and [GME API Tutorial](https://github.com/Landgate/slip-developer-documentation/wiki/Tutorial-%231%3A-The-GME-API-%26-WFS) have more information on working with the GME API. We've also got a few [code samples](https://github.com/Landgate/slip-code-samples) demonstrating more advanced uses of the GME API.
+### Downloading data
+Geospatial datasets are currently available to download from data.wa.gov.au in two formats - Shapefile and Map Package. These downloads are automatically snapshotted and refreshed on a nightly basis.
 
-Accessing data via the Google Maps Engine API is at the datasource level and requires a datasourceId to be provided (see ```layers.json``` above).
+@TODO Screenshot
+
+See our [Jaron busting guide](#jargon_busting) for a description of the formats.
+
+> *Note:* While most of the datasets downloads are freely available, you will be prompted to sign in when you download a dataset. This helps us to better understand and engage with the end users of our datasets. Simply register an account and login you'll be able to proceed to download your datasets.
+
+@TODO Screenshot
+
+Once you've downloaded your datasets there's a wide range of different tools available to help you query, convert, and analyse the data:
+
+* *Quick visualisation and data format conversion:*
+  * [GeoJSON.io](http://geojson.io/#map=2/20.0/0.0): A simple website for that allows for uploading, converting, and visualising moderately sized spatial datasets. You can also draw and create your own spatial datasets - handy for creating dummy datasets!
+  * [Ogre](https://ogre.adc4gis.com/): A handy website to convert many common spatial data formats (including shapefiles) to the modern [GeoJSON](http://geojson.org/) format.
+  * [NationalMap](http://nationalmap.gov.au/): NationalMap is not only a handy catalogue of government datasets, you can also upload and visualise other datasets on it (supports common formats like GeoJSON, KML, GPX, and more).
+* *Platform as a Service Maps:* 
+  * [Carto](https://carto.com/) (**formerly CartoDB**): A simple, easy-to-use platform for everyone (not just geospatial nerds). Upload your data, hook into common datasets (e.g. country borders, administrative boundaries), and create beautiful web and mobile maps right from your browser.
+  * [ArcGIS Online](https://www.arcgis.com/home/index.html): Make and share beautiful maps, and do everything in between. Maps, apps, analytics, administration, collaboration through an easy-to-use mapping solution.
+  * [MapBox](https://www.mapbox.com/): Mapbox is a mapping platform for developers. Easily integrate location into any mobile or online application. Search, geocoding, real-time data, directions and routing, 2.5D and 3D maps.
+* *Desktop software:*
+  * [QGIS](http://www.qgis.org/en/site/): The open source Geographic Information System. Create, edit, visualise, analyse, and publish geospatial information on Windows, Mac, Linux, and BSD.
+  * [ArcGIS Pro](http://www.esri.com/en/software/arcgis-pro): ArcGIS Pro reinvents desktop GIS. Design and edit in 2D and 3D, work with multiple displays and layouts, and publish finished web maps directly to ArcGIS Online or Portal for ArcGIS, connecting you to users throughout the world.
+* *Databases:*
+  * [PostGIS](http://postgis.net/): Spatial databases aren't just for storing data - they're great for conduct complex analysis tasks if you're happy writing SQL queries. For spatial databases consider nothing but the best: the PostGIS extension to [PostgreSQL](https://www.postgresql.org/). If there's a spatial query or manipulation you need to do then PostGIS has it; and hundreds of other functions besides.
+
+### Using APIs
+> Benefits
+
+@TODO Screenshot
+
+See our [Jaron busting guide](#jargon_busting) for a description of these APIs.
+
+
+> APIs: ESRI REST/WMS/WFS
+>> NatMap, AGO
+>> Web Libraries, Mobile Libraries
+>> QGIS, ArcGIS, et cetera
+
+> Tools
+>> Command-line
+>> GeoJSON.io, ogr2ogr Ogre
+>> GitHub GeoJSON
 
 
 ### Visualising GeoJSON
 You can also map the GeoJSON data that the GME API returns. [OpenLayers](http://openlayers.org/dev/examples/?q=geojson) and [Leaflet](http://leafletjs.com/examples/geojson.html) support GeoJSON natively and GitHub itself [will render GeoJSON files](https://help.github.com/articles/mapping-geojson-files-on-github).
 
 
-### Command line
-If command-line is more your thing there's work underway to support the GME API within the [GDAL](http://www.gdal.org/). See the [GMEDriver documentation](http://trac.osgeo.org/gdal/wiki/GMEDriver) for more information.
-
-### Error: *"This resource is too large to be accessed via this API call."*
-If you receive this error message, let us know, and we can provide the details for an account with special access to larger data sources.
 
 
 ## The Developer
