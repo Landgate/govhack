@@ -1,136 +1,76 @@
-GovHack 2015
+GovHack
 ============
 
-Hi there GovHacker,
+Hi GovHacker,
 
-Herein you shall find a collection of resources to help you use Landgate's SLIP platform in your GovHack 2015 project.
+Herein you shall find a collection of resources, tips, and examples to help you to get started using data from [data.wa.gov.au](http://data.wa.gov.au/).
 
 
-# What is SLIP?
+# WA Government Open Data
 
-Landgate coordinates effort across the State Government to deliver the Shared Location Information Platform (SLIP) - a repository of spatial, or location-based, datasets from Western Australian government agencies.
-
-The delivery of the new SLIP platform began in 2013 with the launch of [locate.wa.gov.au](http://locate.wa.gov.au). This new service has made available to a whole new audience just some of the data shared by over 30 organisations through SLIP. The journey continues through GovHack 2015, with a range of new service being shared with the developer community.
-
+@TODO
 
 # Help?
-Confused? Can't find data? Contact [Keith Moss](https://twitter.com/kevin_rudds_cat), or any of Landgate's other mentors who are on-site in Perth.
+Confused? Can't find data? Contact [our friendly team of mentors](http://portal.govhack.org/sponsors/landgate.html) who'll be available on-site in Perth, and around the country on Slack.
 
 
-# What is available?
+# What data is available?
 
-We're making eight map services, comprising hundreds of Creative Commons licensed datasets, available for GovHack this year: including our range of existing public map services, and our Sandbox service for developers.
-
-Check out our list of [publicly available services](http://slip.landgate.wa.gov.au/Pages/Public-Services.aspx) here, and read on for more information about how to use them.
-
-## Public Map Services
-All of our [publicly available services](http://slip.landgate.wa.gov.au/Pages/Public-Services.aspx) provide a range of APIs for getting at the data contained therein:
-
-* A Google Maps viewer link that is useful for exploring, previewing, and performing basic queries on the datasets in each service. (e.g. [Cultural and Society Service](https://mapsengine.google.com/09372590152434720789-03311849775732631692-4/mapview/?authuser=0))
-* WMS and WMTS RESTful APIs that return JPEG or PNG image tiles for one or more datasets in each service, and support simple querying operation on the underlying data.
-* The Google Maps Engine API (GME API), a RESTful JSON API for retrieving datasets as GeoJSON.
-* Additionally, we support a basic WFS1 compliant API, and Google Earth KML wrappings.
-
-Further explanations of what these APIs do, and how to use them, can be found below. The page for each map service contains the specific links and connection details for the APIs for each service.
-
-
-## Available datasets, finding data
-Trying to list all of the data in SLIP would just result in a huge unordered list, so instead we'll just give you a taste of what's available here. To search for specific data head over to [slip.landgate.wa.gov.au](http://slip.landgate.wa.gov.au/) (remember to use the advanced search functionality to include "Vector Data" in your search results).
-
-> NB: If you see a datasets you would like to use for GovHack that aren't public get in touch with one of our mentors and we may be able to give you special access for GovHack.
-
-Our public map services contain a wealth of data from over thirty Western Australia Government, including:
+Over 700 datasets from more than 40 WA government agencies are available at [data.wa.gov.au](http://catalogue.beta.data.wa.gov.au/dataset) for use at GovHack, including:
 
 * Property boundaries and sales records
 * A high resolution aerial photo mosaic of Western Australia
 * A collection of historical aerial photos dating back to 1948, and historic maps back to 1838
-* Government boundary information, including:
-  * State Electorates
-  * Local Government Boundaries (current and proposed)
-  * Suburbs
-  * Aboriginal & Torres Strait Islands Boundaries (national dataset)
-* The locations of schools, universities, hospitals, and emergency services
-* Transport infrastructure, including:
-  * Bus stops and routes
-  * Train stations
-  * Roads and rail lines
+* Administrative boundaries
+* Locations of schools, universities, hospitals, and emergency services
+* Transport infrastructure
 * Mining tenements and minerals deposits
 * A cut of information from the 2011 Census
 * Information on the sewer system, water pipes, and water meters.
-* Environmental data, including:
-  * Regionally Significant Natural Areas (Swan Bioplan)
-  * Supporting Information for Environmental Referral (EPA)
-* Mining and resources data, including:
-  * Mineral drillholes and geothermal releases and titles
-  * Mines and mineral deposits, mining tenements
-  * Petroleum title, wells, applications, pipelines, and releases
+* Environmental datasets and boundaries
+* Mining and resources data
 * Native Title determinations and Indigenous Land Use Agreements
 * Aboriginal communities and heritage places
-* Geological and Geophysical data, including:
-  * The regolith and bedrock geology of Western Australia
-  * The geological map of Western Australia
-  * Mineral field boundaries
-  * Groundwater salinity across Western Australia
-  * Acid sulfate soil risk maps
-* Utilities data, including high voltage distribution and transmission lines
+* Geological and teophysical data
+* Power and water utilities data
+
+## SLIP
+@TODO
+Here or brief and point to later in the doc?
 
 
-## Developer Sandbox
-
-Our [SLIP Academy](https://groups.google.com/forum/#!forum/slip-academy) Developer Sandbox Service is a private service setup to allow developers to experiment with a geographically clipped range of datasets, including data usually limited to subscribers to SLIP. Data are clipped to cover the new suburbs around Clarkson, within an area stretching from Tamala Park in the south to Eglinton in the north.
-
-* Aerial photography from 1956 - 2013.
-* Infrastructure, including:
-  * Bus stops and routes
-  * Roads
-  * Sewer pipes and access chambers
-  * Water pipes and meters
-* 2011 Census - Selected Medians and Averages (SA1) B02
-* Administrative boundaries, including suburb and LGAs
-* Geodetic horizontal control points
-
-Subscription data available includes:
-
-* Tenure data (property ownership information with names scrubbed)
-* Cadastre, including: property polygon and address, boundary lines, and reserves
-* Building footprints
-* R-Codes
-* Points of Interest
+Landgate coordinates effort across the State Government to deliver the Shared Location Information Platform (SLIP) - a repository of spatial, or location-based, datasets from Western Australian government agencies.
 
 
-# What does this column in the dataset mean?
+
+### P vs S vs R
+
+## Data dictionaries
 
 If you're having trouble understanding any of our data check out our [data dictionaries](http://www.landgate.wa.gov.au/corporate.nsf/web/SLIP+Data+Dictionary) resource for in-depth descriptions of our core datasets. There are also mentors from a whole [range of Western Australian government agencies](http://perth.govhack.org/mentors.html) in attendance who will be happy to explain their data to you.
+
+# I can't find / can't access
+> If you can't find a dataset see a datasets you would like to use for GovHack that aren't public get in touch with one of our mentors and we may be able to give you special access for GovHack.
+
+
 
 
 # How can I use SLIP in my project?
 
-So you've seen the map viewers already, poked around, and found some data you want to use for your GovHack project. Great!
+> So you've seen the map viewers already, poked around, and found some data you want to use for your GovHack project. Great!
 
 This rest of this document will serve as a **brief** overview and introduction to developing with the SLIP platform.
 
 More detailed information, step-by-step guides, tutorials, code samples, and much more are available on our **[SLIP Developer Documentation](https://github.com/Landgate/slip-developer-documentation/wiki)** portal.
 
-
-## A brief word on mapIds, layerIds, and datasourceIds
-
-Throughout this documentation we'll refer variously to mapIds, layerIds, and datasourceIds. Don't worry, they're just unique identifiers for assets in SLIP.
-
-For example, some of our mapIds are:
-
-> **Locate:** 09372590152434720789-00913315481290556980
->
-> **Resources:** 09372590152434720789-11493353092997567468
->
-> **Sandbox:** 09372590152434720789-00440247219122458144
-
-For layerIds and datasourceIds click the "Data Links" button when you've searached for a dataset on [slip.landgate.wa.gov.au](http://slip.landgate.wa.gov.au/).
+> @TODO User-centric questions/statements linking to each of the three/four sections below
+> @TODO Resource-centric
 
 
 ## Spatial data? 0_o
 If you're new to working with spatial data or mapping we highly recommend you spend some time reading [mapschool.io: a free introduction to geo](http://mapschool.io/).
 
-(Trust us - it'll save you much head scratching and bafflement later on)
+(Trust us - it'll save you much head scratching and bafflement later on.)
 
 You should also check out the [Working with Geographic Data](http://govhack-toolkit.readthedocs.org/technical/geographic-data/) and [In which we play at being cartographers](http://govhack-toolkit.readthedocs.org/technical/making-maps/) sections in the GovHack Hacker Toolkit for a deep dive on all of the awesome tools available for working with spatial data.
 
