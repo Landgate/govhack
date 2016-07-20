@@ -5,16 +5,9 @@ Hi GovHacker,
 
 Herein you shall find a collection of resources, tips, and examples to help you to get started using data from [data.wa.gov.au](http://data.wa.gov.au/).
 
-
 # WA Government Open Data
 
-@TODO
-
-# Help?
-Confused? Can't find data? Contact [our friendly team of mentors](http://portal.govhack.org/sponsors/landgate.html) who'll be available on-site in Perth, and around the country on Slack.
-
-
-# What data is available?
+## What data is available?
 
 Over 700 datasets from more than 40 WA government agencies are available at [data.wa.gov.au](http://catalogue.beta.data.wa.gov.au/dataset) for use at GovHack, including:
 
@@ -34,28 +27,42 @@ Over 700 datasets from more than 40 WA government agencies are available at [dat
 * Geological and teophysical data
 * Power and water utilities data
 
-## SLIP
-@TODO
-Here or brief and point to later in the doc?
+## Help and Mentors
+Confused? Can't find data? Contact [our friendly team of mentors](http://portal.govhack.org/regions/western_australia.html#mentors) from across WA government who'll be available on-site in Perth, and around the country on Slack.
+
+### I can't find the dataset I want
+If you're having trouble finding a dataset don't sweat it! Data.wa.gov.au is still in its infancy and doesn't yet list every dataset in Western Australia. Talk to our team of mentors and they may be able to help you find it - they've years of experience in dealing with and tracking down datasets across all levels of government.
 
 
-Landgate coordinates effort across the State Government to deliver the Shared Location Information Platform (SLIP) - a repository of spatial, or location-based, datasets from Western Australian government agencies.
+## Jargon busting
+Throughout this documentation...
+
+> @TODO Screenshot
+
+*Web Mapping Service:*
+*Web Feature Service:*
+*ESRI REST API:*
+*Shapefile:*
+*Service Map Package:*
+*Data dictionaries::* "If you're having trouble understanding any of our data check out our", "in-depth descriptions of our core datasets"
+*SLIP:* The Shared Location Information Platform (SLIP) is a repository of spatial, or location-based, datasets from Western Australian government agencies coordinated by Landgate on behalf of the WA Government. Many of the datasets you find on data.wa.gov.au will be hosted and served out of SLIP
+
+> SLIP WMS, WFS, ESRI REST...
+
+## Public, Subscription, and Restricted datasets
+The goal of data.wa.gov.au is to make all WA government data discoverable from one place - which means we have data listed that isn't 100% open. Broadly speaking there are three different classifications of data -
+
+*Public:* Datasets that are 100% openly and freely available to use and download under a Creative Commons license.
+
+*Subscription:* Datasets that are open to use, but are typically part of a chargeable service.
+
+*Restricted:* Datasets that are restricted for use to authorised government agencies, typically due to their sensitive nature, and for reasons of security and privacy.
+
+If you find a dataset that you'd like to use for GovHack that isn't public don't worry - in some cases we'll be able to give you access for a limited time to use the data in your GovHack project. Get in touch with our team of mentors regarding access.
 
 
 
-### P vs S vs R
-
-## Data dictionaries
-
-If you're having trouble understanding any of our data check out our [data dictionaries](http://www.landgate.wa.gov.au/corporate.nsf/web/SLIP+Data+Dictionary) resource for in-depth descriptions of our core datasets. There are also mentors from a whole [range of Western Australian government agencies](http://perth.govhack.org/mentors.html) in attendance who will be happy to explain their data to you.
-
-# I can't find / can't access
-> If you can't find a dataset see a datasets you would like to use for GovHack that aren't public get in touch with one of our mentors and we may be able to give you special access for GovHack.
-
-
-
-
-# How can I use SLIP in my project?
+# Using SLIP - A technical guide for developers and hackers
 
 > So you've seen the map viewers already, poked around, and found some data you want to use for your GovHack project. Great!
 
@@ -66,6 +73,8 @@ More detailed information, step-by-step guides, tutorials, code samples, and muc
 > @TODO User-centric questions/statements linking to each of the three/four sections below
 > @TODO Resource-centric
 
+## Technical assistance with SLIP
+Confused? Can't find data? Contact [our friendly team of mentors](http://portal.govhack.org/sponsors/landgate.html) who'll be available on-site in Perth, and around the country on Slack.
 
 ## Spatial data? 0_o
 If you're new to working with spatial data or mapping we highly recommend you spend some time reading [mapschool.io: a free introduction to geo](http://mapschool.io/).
