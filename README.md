@@ -108,13 +108,13 @@ If your focus is actually getting at the raw data itself, running queries agains
 ### Downloading data
 Datasets are currently available to download from data.wa.gov.au in two formats - Shapefile and Map Package. These downloads are automatically snapshotted and refreshed on a nightly basis.
 
-@TODO Screenshot
+![An example list of the different dataset download options from SLIP.](example-slip-data-downloads.png)
 
 See our [Jaron busting guide](#jargon-busting) for a description of the formats.
 
 > *Note:* While most of the datasets downloads are freely available, you will be prompted to sign in when you download a dataset. This helps us to better understand and engage with the end users of our datasets. Simply register an account and login you'll be able to proceed to download your datasets.
 
-@TODO Screenshot
+![An example of the SLIP signon form.](slip-signon-form.png)
 
 Once you've downloaded your datasets there's a wide range of different tools available to help you query, convert, and analyse the data:
 
@@ -137,7 +137,7 @@ Once you've downloaded your datasets there's a wide range of different tools ava
 ### Using APIs
 Datasets are currently available as live API or web service feeds from data.wa.gov.au in three flavours - WMS, WFS, and the ESRI REST API.
 
-@TODO Screenshot
+![An example of the SLIP APIs available from data.wa.gov.au.](example-slip-api-endpoints.png)
 
 See our [Jaron busting guide](#jargon-busting) for a description of these APIs.
 
@@ -166,7 +166,7 @@ If you need to design and create maps or geospatial applications for the web and
 ### Using APIs
 Datasets are currently available as live API or web service feeds from data.wa.gov.au in three flavours - WMS, WFS, and the ESRI REST API.
 
-@TODO Screenshot
+![An example of the SLIP APIs available from data.wa.gov.au.](example-slip-api-endpoints.png)
 
 See our [Jaron busting guide](#jargon-busting) for a description of these APIs.
 
