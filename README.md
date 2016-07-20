@@ -98,12 +98,15 @@ If your goal is to quickly explore and see what data is available then there are
 
 - The [NationalMap](http://nationalmap.gov.au/) provided map-based access to spatial datasets across all levels of Australia Federal, state, and local governments.
 
+@TODO PAASy Maps?
+  * [Web AppBuilder for ArcGIS](http://doc.arcgis.com/en/web-appbuilder/): Build powerful GIS apps that run on any device. No coding required.
+
 
 ## The Analyst
 If your focus is actually getting at the raw data itself, running queries against it, and analysing it then you have the choice of downloading data and analysing it locally, or using our APIs to do the heavy lifting for you.
 
 ### Downloading data
-Geospatial datasets are currently available to download from data.wa.gov.au in two formats - Shapefile and Map Package. These downloads are automatically snapshotted and refreshed on a nightly basis.
+Datasets are currently available to download from data.wa.gov.au in two formats - Shapefile and Map Package. These downloads are automatically snapshotted and refreshed on a nightly basis.
 
 @TODO Screenshot
 
@@ -128,84 +131,62 @@ Once you've downloaded your datasets there's a wide range of different tools ava
   * [ArcGIS Pro](http://www.esri.com/en/software/arcgis-pro): ArcGIS Pro reinvents desktop GIS. Design and edit in 2D and 3D, work with multiple displays and layouts, and publish finished web maps directly to ArcGIS Online or Portal for ArcGIS, connecting you to users throughout the world.
 * *Databases:*
   * [PostGIS](http://postgis.net/): Spatial databases aren't just for storing data - they're great for conduct complex analysis tasks if you're happy writing SQL queries. For spatial databases consider nothing but the best: the PostGIS extension to [PostgreSQL](https://www.postgresql.org/). If there's a spatial query or manipulation you need to do then PostGIS has it; and hundreds of other functions besides.
+* *Command-line:*
+ * [GDAL](http://www.gdal.org/): Check out GDAL (Geospatial Data Abstraction Library), which has readers and writers for over 50 types of spatial data. GDAL bindings also exist in Python, .NET, et cetera.
 
 ### Using APIs
-> Benefits
+Datasets are currently available as live API or web service feeds from data.wa.gov.au in three flavours - WMS, WFS, and the ESRI REST API.
 
 @TODO Screenshot
 
 See our [Jaron busting guide](#jargon_busting) for a description of these APIs.
 
+There's a wide range of different tools available to help you query, visualise, and use these services:
 
-> APIs: ESRI REST/WMS/WFS
->> NatMap, AGO
->> Web Libraries, Mobile Libraries
->> QGIS, ArcGIS, et cetera
-
-> Tools
->> Command-line
->> GeoJSON.io, ogr2ogr Ogre
->> GitHub GeoJSON
-
-
-### Visualising GeoJSON
-You can also map the GeoJSON data that the GME API returns. [OpenLayers](http://openlayers.org/dev/examples/?q=geojson) and [Leaflet](http://leafletjs.com/examples/geojson.html) support GeoJSON natively and GitHub itself [will render GeoJSON files](https://help.github.com/articles/mapping-geojson-files-on-github).
-
-
+* *Quick visualisation:*
+  * [NationalMap](http://nationalmap.gov.au/): NationalMap is not only a handy catalogue of government datasets, you can also link to third-party APIs (including WMS, WFS, ESRI, and more), as well as uploadng and visualise your own datasets on it (supports common formats like GeoJSON, KML, GPX, and more).
+* *Web & mobile mapping libraries:*
+ * [OpenLayers](http://openlayers.org/): A high-performance, feature-packed library for all your web mapping needs. OpenLayers makes it easy to put a dynamic map in any web page. It can display map tiles, vector data and markers loaded from any source. OpenLayers has been developed to further the use of geographic information of all kinds.
+ * [Leaflet](http://leafletjs.com/): Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. Leaflet is designed with simplicity, performance and usability in mind. It works efficiently across all major desktop and mobile platforms.
+ * [ArcGIS for Developers](https://developers.arcgis.com/): Bring the power of location to your apps with ArcGIS – a mapping platform accessible to developers. Create and manage geospatial apps regardless of your developer experience. Build web, mobile, and desktops apps that incorporate mapping, visualization, analysis, and more.
+ * [CARTO.js](https://carto.com/docs/carto-engine/carto-js/) (formerly CartoDB.js): CARTO.js is a simple unified JavaScript library that interacts with the CARTO Engine service. This library enables you to connect to your stored visualizations, create new visualizations, add custom interaction, and access or query raw data from a web browser.
+ * [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/): Start with the maps your users love, add the data developers trust. Build a custom map for your site using styled maps, 3D buildings, indoor floor plans, multi-modal directions and more.
+ * [MapBox for Developers](https://www.mapbox.com/developers/): Mapbox is the mapping platform for developers. Build maps and applications on our simple and powerful APIs, and use our open source libraries for interactivity and control.
+* *Platform as a Service Maps:* 
+  * [Carto](https://carto.com/) (**formerly CartoDB**): A simple, easy-to-use platform for everyone (not just geospatial nerds). Upload your data, hook into common datasets (e.g. country borders, administrative boundaries), and create beautiful web and mobile maps right from your browser.
+  * [ArcGIS Online](https://www.arcgis.com/home/index.html): Make and share beautiful maps, and do everything in between. Maps, apps, analytics, administration, collaboration through an easy-to-use mapping solution.
+* *Desktop software:*
+  * [QGIS](http://www.qgis.org/en/site/): The open source Geographic Information System. Create, edit, visualise, analyse, and publish geospatial information on Windows, Mac, Linux, and BSD.
+  * [ArcGIS Pro](http://www.esri.com/en/software/arcgis-pro): ArcGIS Pro reinvents desktop GIS. Design and edit in 2D and 3D, work with multiple displays and layouts, and publish finished web maps directly to ArcGIS Online or Portal for ArcGIS, connecting you to users throughout the world.
 
 
 ## The Developer
-If you just need to be able to generate a visual representation of the data (e.g. display it on a map, generate once-off images) you have three APIs available:
+If you need to design and create maps or geospatial applications for the web and mobile platforms then our suite of APIs have you covered.
 
-* WMS: A RESTful API (Web Mapping Service)
-  > A WMS returns JPEG/PNG images for one or more layers in a map service; as well as supporting querying the data ("tell me about the features at a point").
-* WMTS: A RESTful API (Web Map Tiling Service)
-  > A WMTS returns 256x256 JPEG/PNG images for a singe layer in a map service; it  also supports querying the data.
-* Google Maps JavaScript API
-  > The Google Maps JavaScript API implements its own version of a WMS-like interface via [MapsEngineLayer](https://developers.google.com/maps/documentation/javascript/mapsenginelayers). It also supports client-side rendering and styling of data via [DynamicMapsEngineLayer](https://developers.google.com/maps/documentation/javascript/mapsenginelayers#dynamicmapsenginelayer_events).
+### Using APIs
+Datasets are currently available as live API or web service feeds from data.wa.gov.au in three flavours - WMS, WFS, and the ESRI REST API.
 
-To consume any of these APIs you'll want a client library to do the heavy lifting for you. Fortunately you're spoilt for choice!
+@TODO Screenshot
 
-### WMS & WMTS
-[OpenLayers 2](http://openlayers.org/), [OpenLayers 3](http://ol3js.org/), [Leaflet](http://leafletjs.com/), amd [MapBox JS](https://www.mapbox.com/mapbox.js) can all be used to easily consume WMS and WMTS services.
+See our [Jaron busting guide](#jargon_busting) for a description of these APIs.
 
+There's a wide range of different tools available to help you query, visualise, and use these services:
 
-> **WMS:** [Locate](https://mapsengine.google.com/09372590152434720789-00913315481290556980-4/wms/?REQUEST=GetCapabilities) | [Resources](https://mapsengine.google.com/09372590152434720789-11493353092997567468-4/wms/?REQUEST=GetCapabilities) | [Sandbox](https://mapsengine.google.com/09372590152434720789-00440247219122458144-4/wms/?REQUEST=GetCapabilities)
->
-> **WMTS:** [Locate](https://mapsengine.google.com/09372590152434720789-00913315481290556980-4/wmts/?REQUEST=GetCapabilities) | [Resources](https://mapsengine.google.com/09372590152434720789-11493353092997567468-4/wmts/?REQUEST=GetCapabilities) | [Sandbox](https://mapsengine.google.com/09372590152434720789-00440247219122458144-4/wmts/?REQUEST=GetCapabilities)]
+* *Quick visualisation:*
+  * [NationalMap](http://nationalmap.gov.au/): NationalMap is not only a handy catalogue of government datasets, you can also link to third-party APIs (including WMS, WFS, ESRI, and more), as well as uploadng and visualise your own datasets on it (supports common formats like GeoJSON, KML, GPX, and more).
+* *Web & mobile mapping libraries:*
+ * [OpenLayers](http://openlayers.org/): A high-performance, feature-packed library for all your web mapping needs. OpenLayers makes it easy to put a dynamic map in any web page. It can display map tiles, vector data and markers loaded from any source. OpenLayers has been developed to further the use of geographic information of all kinds.
+ * [Leaflet](http://leafletjs.com/): Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. Leaflet is designed with simplicity, performance and usability in mind. It works efficiently across all major desktop and mobile platforms.
+ * [ArcGIS for Developers](https://developers.arcgis.com/): Bring the power of location to your apps with ArcGIS – a mapping platform accessible to developers. Create and manage geospatial apps regardless of your developer experience. Build web, mobile, and desktops apps that incorporate mapping, visualization, analysis, and more.
+ * [CARTO.js](https://carto.com/docs/carto-engine/carto-js/) (formerly CartoDB.js): CARTO.js is a simple unified JavaScript library that interacts with the CARTO Engine service. This library enables you to connect to your stored visualizations, create new visualizations, add custom interaction, and access or query raw data from a web browser.
+ * [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/): Start with the maps your users love, add the data developers trust. Build a custom map for your site using styled maps, 3D buildings, indoor floor plans, multi-modal directions and more.
+ * [MapBox for Developers](https://www.mapbox.com/developers/): Mapbox is the mapping platform for developers. Build maps and applications on our simple and powerful APIs, and use our open source libraries for interactivity and control.
+* *Platform as a Service Maps:* 
+  * [Carto](https://carto.com/) (**formerly CartoDB**): A simple, easy-to-use platform for everyone (not just geospatial nerds). Upload your data, hook into common datasets (e.g. country borders, administrative boundaries), and create beautiful web and mobile maps right from your browser.
+  * [ArcGIS Online](https://www.arcgis.com/home/index.html): Make and share beautiful maps, and do everything in between. Maps, apps, analytics, administration, collaboration through an easy-to-use mapping solution.
+* *Desktop software:*
+  * [QGIS](http://www.qgis.org/en/site/): The open source Geographic Information System. Create, edit, visualise, analyse, and publish geospatial information on Windows, Mac, Linux, and BSD.
+  * [ArcGIS Pro](http://www.esri.com/en/software/arcgis-pro): ArcGIS Pro reinvents desktop GIS. Design and edit in 2D and 3D, work with multiple displays and layouts, and publish finished web maps directly to ArcGIS Online or Portal for ArcGIS, connecting you to users throughout the world.
 
-> **Note:** When referring to layers in WMS and WMTS remember to prepend ```-4``` to the layerId.
-
-
-#### Google Maps JavaScript API
-The [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial) has connectors specifically [for Google Maps Engine](https://developers.google.com/maps/documentation/javascript/mapsenginelayers).
-
-There are two means of connecting to Google Maps Engine:
-
-1. Via the layerId (recommended - see ```layers.json```), or
-2. By supplying a mapId and a layerKey.
-
-
-# Tools for working with spatial data
-We've referred to a few tools that we like, for a much more comprehensive list check out the [Working with Geographic Data](http://govhack-toolkit.readthedocs.org/technical/geographic-data/) and [In which we play at being cartographers](http://govhack-toolkit.readthedocs.org/technical/making-maps/) sections in the GovHack Hacker Toolkit.
-
-## Software libraries
-For non-client facing calls you can either build the URLs  yourself; alternatively you can use existing libraries like [OWSLib (Python)](https://pypi.python.org/pypi/OWSLib) or [GeoTools (Java)](http://geotools.org/).
-
-## Make your own maps
-If you have data you want to load into a system to render and map you're spoilt for choice these days:
-
-* [Google Maps Engine](http://mapsengine.google.com) (as noted earlier - our development environment is available).
-* [CartoDB](http://cartodb.com/)
-* [TileMill](https://www.mapbox.com/tilemill/)
-* [MangoMap](http://mangomap.com/)
-
-## APIs
-For playing with any of these APIs we recommend use of the [Postman](http://www.getpostman.com/) HTTP Client. It makes exploring and testing APIs a breeze.
-
-## Desktop software and offiline processing
-For spatial databases consider nothing but the best: the [PostGIS](http://postgis.net/) extension to PostGreSQL. If there's a spatial query or manipulation you need to do then PostGIS has it; and a hundred other functions besides.
-
-For viewing and manipulating spatial data on the desktop you can't go past [QGIS](http://www.qgis.org/en/site/), the open source Geographic Information System.
-
-For command line tools check out [GDAL](http://www.gdal.org/) (Geospatial Data Abstraction Library), which has readers and writers for over 50 types of spatial data. GDAL bindings also exist in Python, .NET, et cetera.
+## Even more tools for working with spatial data
+We've referred to a wide range of tools here, but for a much more comprehensive list check out the [Working with Geographic Data](http://govhack-toolkit.readthedocs.org/technical/geographic-data/) and [Making maps](http://govhack-toolkit.readthedocs.org/technical/making-maps/) sections in the GovHack Handbook.
