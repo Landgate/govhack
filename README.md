@@ -62,7 +62,11 @@ The goal of data.wa.gov.au is to make all WA government data discoverable from o
 
 *Restricted:* Datasets that are restricted for use to authorised government agencies, typically due to their sensitive nature, and for reasons of security and privacy.
 
-If you find a dataset that you'd like to use for GovHack that isn't public don't worry - in some cases we'll be able to give you access for a limited time to use the data in your GovHack project. Get in touch with our team of mentors regarding access.
+The quickest way to tell which category a dataset belongs to is to check the **Data homepage** field of the dataset:
+
+![An example of the 'Data homepage' atttribute on a dataset.](example-data-class.png)
+
+If you find a subscription dataset that you'd like to use for GovHack that isn't public don't worry - in some cases we'll be able to give you access for a limited time to use the data in your GovHack project. Get in touch with our team of mentors regarding access.
 
 
 
@@ -127,7 +131,7 @@ Once you've downloaded your datasets there's a wide range of different tools ava
   * [QGIS](http://www.qgis.org/en/site/): The open source Geographic Information System. Create, edit, visualise, analyse, and publish geospatial information on Windows, Mac, Linux, and BSD.
   * [ArcGIS Pro](http://www.esri.com/en/software/arcgis-pro): ArcGIS Pro reinvents desktop GIS. Design and edit in 2D and 3D, work with multiple displays and layouts, and publish finished web maps directly to ArcGIS Online or Portal for ArcGIS, connecting you to users throughout the world.
 * *Databases:*
-  * [PostGIS](http://postgis.net/): Spatial databases aren't just for storing data - they're great for conduct complex analysis tasks if you're happy writing SQL queries. For spatial databases consider nothing but the best: the PostGIS extension to [PostgreSQL](https://www.postgresql.org/). If there's a spatial query or manipulation you need to do then PostGIS has it; and hundreds of other functions besides.
+  * [PostGIS](http://postgis.net/): Spatial databases aren't just for storing data - they're great for conduct complex analysis tasks if you're happy writing SQL queries. For spatial databases consider nothing but the best: the PostGIS extension to [PostgreSQL](https://www.postgresql.org/). If there's a spatial query or manipulation you need to do then PostGIS has it; and hundreds of other functions besides. It's easy to get PostgreSQL + PostGIS running quickly on [macOS](http://postgresapp.com/), [Windows](http://postgis.net/windows_downloads/), or [AWS](https://aws.amazon.com/rds/postgresql/).
 * *Command-line:*
  * [GDAL](http://www.gdal.org/): Check out GDAL (Geospatial Data Abstraction Library), which has readers and writers for over 50 types of spatial data. GDAL bindings also exist in Python, .NET, et cetera.
 
@@ -143,10 +147,10 @@ There's a wide range of different tools available to help you query, visualise, 
 * *Quick visualisation:*
   * [NationalMap](http://nationalmap.gov.au/): NationalMap is not only a handy catalogue of government datasets, you can also link to third-party APIs (including WMS, WFS, ESRI, and more), as well as uploadng and visualise your own datasets on it (supports common formats like GeoJSON, KML, GPX, and more).
 * *Web & mobile mapping libraries:*
+ * [CARTO.js](https://carto.com/docs/carto-engine/carto-js/) (*formerly CartoDB.js*): CARTO.js is a simple unified JavaScript library that interacts with the CARTO Engine service. This library enables you to connect to your stored visualizations, create new visualizations, add custom interaction, and access or query raw data from a web browser.
+ * [ArcGIS for Developers](https://developers.arcgis.com/): Bring the power of location to your apps with ArcGIS – a mapping platform accessible to developers. Create and manage geospatial apps regardless of your developer experience. Build web, mobile, and desktops apps that incorporate mapping, visualization, analysis, and more. ESRI also has an [awesome GitHub portal for developers](http://esri.github.io/).
  * [OpenLayers](http://openlayers.org/): A high-performance, feature-packed library for all your web mapping needs. OpenLayers makes it easy to put a dynamic map in any web page. It can display map tiles, vector data and markers loaded from any source. OpenLayers has been developed to further the use of geographic information of all kinds.
  * [Leaflet](http://leafletjs.com/): Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. Leaflet is designed with simplicity, performance and usability in mind. It works efficiently across all major desktop and mobile platforms.
- * [ArcGIS for Developers](https://developers.arcgis.com/): Bring the power of location to your apps with ArcGIS – a mapping platform accessible to developers. Create and manage geospatial apps regardless of your developer experience. Build web, mobile, and desktops apps that incorporate mapping, visualization, analysis, and more. ESRI also has an [awesome GitHub portal for developers](http://esri.github.io/).
- * [CARTO.js](https://carto.com/docs/carto-engine/carto-js/) (*formerly CartoDB.js*): CARTO.js is a simple unified JavaScript library that interacts with the CARTO Engine service. This library enables you to connect to your stored visualizations, create new visualizations, add custom interaction, and access or query raw data from a web browser.
  * [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/): Start with the maps your users love, add the data developers trust. Build a custom map for your site using styled maps, 3D buildings, indoor floor plans, multi-modal directions and more.
  * [MapBox for Developers](https://www.mapbox.com/developers/): Mapbox is the mapping platform for developers. Build maps and applications on our simple and powerful APIs, and use our open source libraries for interactivity and control.
 * *Platform as a Service Maps:* 
@@ -172,10 +176,10 @@ There's a wide range of different tools available to help you query, visualise, 
 * *Quick visualisation:*
   * [NationalMap](http://nationalmap.gov.au/): NationalMap is not only a handy catalogue of government datasets, you can also link to third-party APIs (including WMS, WFS, ESRI, and more), as well as uploadng and visualise your own datasets on it (supports common formats like GeoJSON, KML, GPX, and more).
 * *Web & mobile mapping libraries:*
+ * [CARTO.js](https://carto.com/docs/carto-engine/carto-js/) (*formerly CartoDB.js*): CARTO.js is a simple unified JavaScript library that interacts with the CARTO Engine service. This library enables you to connect to your stored visualizations, create new visualizations, add custom interaction, and access or query raw data from a web browser.
+ * [ArcGIS for Developers](https://developers.arcgis.com/): Bring the power of location to your apps with ArcGIS – a mapping platform accessible to developers. Create and manage geospatial apps regardless of your developer experience. Build web, mobile, and desktops apps that incorporate mapping, visualization, analysis, and more. ESRI also has an [awesome GitHub portal for developers](http://esri.github.io/).
  * [OpenLayers](http://openlayers.org/): A high-performance, feature-packed library for all your web mapping needs. OpenLayers makes it easy to put a dynamic map in any web page. It can display map tiles, vector data and markers loaded from any source. OpenLayers has been developed to further the use of geographic information of all kinds.
  * [Leaflet](http://leafletjs.com/): Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. Leaflet is designed with simplicity, performance and usability in mind. It works efficiently across all major desktop and mobile platforms.
- * [ArcGIS for Developers](https://developers.arcgis.com/): Bring the power of location to your apps with ArcGIS – a mapping platform accessible to developers. Create and manage geospatial apps regardless of your developer experience. Build web, mobile, and desktops apps that incorporate mapping, visualization, analysis, and more. ESRI also has an [awesome GitHub portal for developers](http://esri.github.io/).
- * [CARTO.js](https://carto.com/docs/carto-engine/carto-js/) (*formerly CartoDB.js*): CARTO.js is a simple unified JavaScript library that interacts with the CARTO Engine service. This library enables you to connect to your stored visualizations, create new visualizations, add custom interaction, and access or query raw data from a web browser.
  * [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/): Start with the maps your users love, add the data developers trust. Build a custom map for your site using styled maps, 3D buildings, indoor floor plans, multi-modal directions and more.
  * [MapBox for Developers](https://www.mapbox.com/developers/): Mapbox is the mapping platform for developers. Build maps and applications on our simple and powerful APIs, and use our open source libraries for interactivity and control.
 * *Platform as a Service Maps:* 
