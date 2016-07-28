@@ -37,7 +37,7 @@ If you're having trouble finding a dataset don't sweat it! Data.wa.gov.au is sti
 ## Jargon busting
 Throughout data.wa.gov.au and this document you'll find reference to various technical and acronyms, so we've put together a quick jaron busting guide:
 
-![An example list of the different resources that may be attached to a dataset.](example-dataset-resources.png)
+![An example list of the different resources that may be attached to a dataset.](images/slip/example-dataset-resources.png)
 
 *[Web Mapping Service (WMS)](https://en.wikipedia.org/wiki/Web_Map_Service):* A service for generating sets of image tiles used in web mapping. It converts raw spatial datasets into georeferenced images and is a widely used international open standard; as well it supports querying the data ("Tell me about the features at a point"). WMS services available via data.wa.gov.au are served through SLIP.
 
@@ -64,7 +64,7 @@ The goal of data.wa.gov.au is to make all WA government data discoverable from o
 
 The quickest way to tell which category a dataset belongs to is to check the **Data homepage** field of the dataset:
 
-![An example of the 'Data homepage' atttribute on a dataset.](example-data-class.png)
+![An example of the 'Data homepage' atttribute on a dataset.](images/slip/example-data-class.png)
 
 If you find a subscription dataset that you'd like to use for GovHack that isn't public don't worry - in some cases we'll be able to give you access for a limited time to use the data in your GovHack project. Get in touch with our team of mentors regarding access.
 
@@ -109,13 +109,13 @@ If your focus is actually getting at the raw data itself, running queries agains
 ### Downloading data
 Datasets are currently available to download from data.wa.gov.au in two formats - Shapefile and Map Package. These downloads are automatically snapshotted and refreshed on a nightly basis.
 
-![An example list of the different dataset download options from SLIP.](example-slip-data-downloads.png)
+![An example list of the different dataset download options from SLIP.](images/slip/example-slip-data-downloads.png)
 
 See our [Jaron busting guide](#jargon-busting) for a description of the formats.
 
 > *Note:* While most of the datasets downloads are freely available, you will be prompted to sign in when you download a dataset. This helps us to better understand and engage with the end users of our datasets. Simply register an account and login you'll be able to proceed to download your datasets.
 
-![An example of the SLIP signon form.](slip-signon-form.png)
+![An example of the SLIP signon form.](images/slip/slip-signon-form.png)
 
 Once you've downloaded your datasets there's a wide range of different tools available to help you query, convert, and analyse the data:
 
@@ -138,7 +138,7 @@ Once you've downloaded your datasets there's a wide range of different tools ava
 ### Using APIs
 Datasets are currently available as live API or web service feeds from data.wa.gov.au in three flavours - WMS, WFS, and the ESRI REST API.
 
-![An example of the SLIP APIs available from data.wa.gov.au.](example-slip-api-endpoints.png)
+![An example of the SLIP APIs available from data.wa.gov.au.](images/slip/example-slip-api-endpoints.png)
 
 See our [Jaron busting guide](#jargon-busting) for a description of these APIs.
 
@@ -167,7 +167,7 @@ If you need to design and create maps or geospatial applications for the web and
 ### Using APIs
 Datasets are currently available as live API or web service feeds from data.wa.gov.au in three flavours - WMS, WFS, and the ESRI REST API.
 
-![An example of the SLIP APIs available from data.wa.gov.au.](example-slip-api-endpoints.png)
+![An example of the SLIP APIs available from data.wa.gov.au.](images/slip/example-slip-api-endpoints.png)
 
 See our [Jaron busting guide](#jargon-busting) for a description of these APIs.
 
