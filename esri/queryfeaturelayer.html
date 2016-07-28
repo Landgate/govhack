@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Query features from a FeatureLayerView</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.0/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.0/"></script>
+
+  <script>
+    require([
+        "esri/Map",
+        "esri/views/MapView",
+
+        "esri/layers/FeatureLayer",
+
+        "esri/PopupTemplate",
+
+        "dijit/a11yclick",
+
+        "dojo/on",
+
+        "dojo/dom",
+        "dojo/dom-attr",
+        "dojo/dom-construct",
+
+        "dojo/domReady!"
+      ],
+      function(
+        Map, MapView,
+        FeatureLayer,
+        PopupTemplate,
+        a11yclick,
+        on,
+        dom, domAttr, domConstruct
+      ) {
+
+        var map = new Map({
+          basemap: "dark-gray"
+        });
+
+        var view = new MapView({
+          container: "sceneDiv",
+          map: map,
+        //   center: [-73.950, 40.702],
+        //   zoom: 11,
+          padding: {
+            right: 300
+          }
+        });
+
+        var listNode = dom.byId("nyc_graphics");
+
+        /********************
+         * Add feature layer
+         ********************/
+
+        // Create the PopupTemplate
+        var tpl = new PopupTemplate({
+          title: "Shipwreck: {name}",
+          content: "<p><b> Lost: {when_lost}, {where_lost} </b></p>" +
+            "<p> Status: {protected}</p>" +
+            "<p> Inspected: {date_inspe}</p>" +
+            "<p> Region: {region}</p>" +
+            "<p> {sources}</p>"
+        });
+
+        // Create the FeatureLayer using the popupTemplate
+        var featureLayer = new FeatureLayer({
+          url: "https://services.slip.wa.gov.au/public/rest/services/WAM_Public_Services/WAM_Public_Services/MapServer/0",
+          outFields: ["*"],
+          popupTemplate: tpl
+        });
+        map.add(featureLayer);
+
+        var graphics;
+
+        view.then(function() {
+          featureLayer.then(function() {
+            view.goTo(featureLayer.fullExtent);
+          });
+        });
+
+        view.whenLayerView(featureLayer).then(function(lyrView) {
+          lyrView.watch("updating", function(val) {
+            if (!val) { // wait for the layer view to finish updating
+
+              // query all the features available for drawing.
+              lyrView.queryFeatures().then(function(results) {
+
+                graphics = results;
+
+                var fragment = document.createDocumentFragment();
+
+                results.forEach(function(result, index) {
+                  var attributes = result.attributes;
+                  var name = attributes.name + " - " +
+                    attributes.when_lost;
+
+                  // Create a list zip codes in NY
+                  domConstruct.create("li", {
+                    className: "panel-result",
+                    tabIndex: 0,
+                    "data-result-id": index,
+                    textContent: name
+                  }, fragment);
+                });
+                domConstruct.place(fragment, listNode, "only");
+              });
+            }
+          });
+        });
+
+        // listen to click event on the zip code list
+        on(listNode, on.selector("li", a11yclick), function(evt) {
+          var target = evt.target;
+          var resultId = domAttr.get(target, "data-result-id");
+
+          // get the graphic corresponding to the clicked zip code
+          var result = resultId && graphics && graphics[parseInt(resultId,
+            10)];
+
+          if (result) {
+            // open the popup at the centroid of zip code polygon
+            // and set the popup's features which will populate popup content and title.
+            view.popup.open({
+              features: [result],
+              location: result.geometry
+            });
+          }
+        });
+
+      });
+  </script>
+
+  <style>
+    html,
+    body,
+    #sceneDiv {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+    
+    .panel-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .panel-side {
+      padding: 2px;
+      box-sizing: border-box;
+      width: 300px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.6);
+      overflow: auto;
+      z-index: 60;
+    }
+    
+    .panel-side h2 {
+      padding: 0 20px;
+      margin: 20px 0;
+    }
+    
+    .panel-side ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .panel-side li {
+      list-style: none;
+      padding: 10px 20px;
+    }
+    
+    .panel-result {
+      cursor: pointer;
+      margin: 2px 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .panel-result:hover,
+    .panel-result:focus {
+      color: orange;
+      background-color: rgba(0, 0, 0, 0.75);
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="panel-container">
+    <div class="panel-side">
+      <h2>Western Australian Shipwrecks</h2>
+      <ul id="nyc_graphics">
+        <li>Loading&hellip;</li>
+      </ul>
+    </div>
+    <div id="sceneDiv"></div>
+  </div>
+</body>
+
+</html>

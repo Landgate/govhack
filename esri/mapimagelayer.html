@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Get started with MapImageLayer</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.0/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.0/"></script>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+    
+    #layerToggle {
+      top: 20px;
+      right: 20px;
+      position: absolute;
+      z-index: 99;
+      background-color: white;
+      border-radius: 8px;
+      padding: 10px;
+      opacity: 0.75;
+    }
+  </style>
+
+  <script>
+    require([
+        "esri/Map",
+        "esri/views/SceneView",
+        "esri/layers/MapImageLayer",
+        "dojo/dom",
+        "dojo/on",
+        "dojo/domReady!"
+      ],
+      function(
+        Map, SceneView, MapImageLayer, dom, on
+      ) {
+
+        /*****************************************************************
+         * Create two TileLayer instances. One pointing to a
+         * cached map service depicting U.S. male population and the other
+         * pointing to a layer of roads and highways.
+         *****************************************************************/
+        // var transportationLyr = new TileLayer({
+        //   url: "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer",
+        //   // This property can be used to uniquely identify the layer
+        //   id: "streets",
+        //   visible: false
+        // });
+
+        // var housingLyr = new TileLayer({
+        //   url: "https://tiles.arcgis.com/tiles/nGt4QxSblgDfeJn9/arcgis/rest/services/New_York_Housing_Density/MapServer",
+        //   id: "ny-housing",
+        //   opacity: 0.9
+        // });
+
+        var shipwrecksLyr = new MapImageLayer({
+          url: "https://services.slip.wa.gov.au/public/rest/services/WAM_Public_Services/WAM_Public_Services/MapServer",
+          id: "0",
+          opacity: 0.9
+        });
+
+        /*****************************************************************
+         * Layers may be added to the map in the map's constructor
+         *****************************************************************/
+        var map = new Map({
+          basemap: "dark-gray",
+          layers: [shipwrecksLyr]
+        });
+
+        /*****************************************************************
+         * Or they may be added to the map using map.add()
+         *****************************************************************/
+        // map.add(transportationLyr);
+
+        var view = new SceneView({
+          container: "viewDiv",
+          map: map
+        });
+
+        /*****************************************************************
+         * The map handles the layers' data while the view and layer views
+         * take care of renderering the layers
+         *****************************************************************/
+        view.on("layerview-create", function(evt) {
+          if (evt.layer.id === "ny-housing") {
+            // Explore the properties of the population layer's layer view here
+            console.log("LayerView for male population created!", evt.layerView);
+          }
+          if (evt.layer.id === "streets") {
+            // Explore the properties of the transportation layer's layer view here
+            console.log("LayerView for streets created!", evt.layerView);
+          }
+        });
+
+        /*****************************************************************
+         * Layers are promises that resolve when loaded, or when all their
+         * properties may be accessed. Once the population layer has loaded,
+         * the view will animate to it's initial extent.
+         *****************************************************************/
+        view.then(function() {
+          shipwrecksLyr.then(function() {
+            view.goTo(shipwrecksLyr.fullExtent);
+          });
+        });
+
+        // var streetsLyrToggle = dom.byId("streetsLyr");
+
+        /*****************************************************************
+         * The visible property on the layer can be used to toggle the
+         * layer's visibility in the view. When the visibility is turned off
+         * the layer is still part of the map, which means you can access
+         * its properties and perform analysis even though it isn't visible.
+         *******************************************************************/
+        // on(streetsLyrToggle, "change", function() {
+        //   transportationLyr.visible = streetsLyrToggle.checked;
+        // });
+      });
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+  <!--<span id="layerToggle">
+    <input type="checkbox" id="streetsLyr"> Transportation
+  </span>-->
+</body>
+
+</html>

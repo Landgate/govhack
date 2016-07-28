@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Visualize data with class breaks</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.0/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.0/"></script>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+    
+    #infoDiv {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      max-width: 300px;
+      background-color: whitesmoke;
+      padding: 8px;
+      border-top-right-radius: 5px;
+      color: darkslategray;
+    }
+  </style>
+
+  <script>
+    require([
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/layers/FeatureLayer",
+      "esri/renderers/ClassBreaksRenderer",
+      "esri/symbols/SimpleFillSymbol",
+      "esri/widgets/Legend",
+      "dojo/domReady!"
+    ], function(
+      Map, MapView, FeatureLayer, ClassBreaksRenderer, SimpleFillSymbol,
+      Legend
+    ) {
+
+      /*****************************************************************
+       * Define symbols for each class break.
+       *****************************************************************/
+
+      var less35 = new SimpleFillSymbol({
+        color: "#7B3294",
+        style: "solid",
+        outline: {
+          width: 0.5,
+          color: "white"
+        }
+      });
+
+      var less50 = new SimpleFillSymbol({
+        color: "#C2A5CF",
+        style: "solid",
+        outline: {
+          width: 0.5,
+          color: "white"
+        }
+      });
+
+      var more50 = new SimpleFillSymbol({
+        color: "#A6DBA0",
+        style: "solid",
+        outline: {
+          width: 0.5,
+          color: "white"
+        }
+      });
+
+      var more75 = new SimpleFillSymbol({
+        color: "#008837",
+        style: "solid",
+        outline: {
+          width: 0.5,
+          color: "white"
+        }
+      });
+
+      /*****************************************************************
+       * Set each unique value directly in the renderer's constructor.
+       * At least one field must be used (in this case the "COL_DEG" field).
+       * The label property of each unique value will be used to indicate
+       * the field value and symbol in the legend.
+       *****************************************************************/
+
+      var renderer = new ClassBreaksRenderer({
+        field: "total_pds_dwellings",
+        // normalizationField: "oid",
+        defaultSymbol: new SimpleFillSymbol({
+          color: "gray",
+          outline: {
+            width: 0.5,
+            color: "white"
+          }
+        }),
+        defaultLabel: "no data",
+        classBreakInfos: [
+        {
+          minValue: 0,
+          maxValue: 1000,
+          symbol: less35,
+          label: "< 1000"
+        }, {
+          minValue: 1001,
+          maxValue: 2000,
+          symbol: less50,
+          label: "1001 - 2000"
+        }, {
+          minValue: 2001,
+          maxValue: 4000,
+          symbol: more50,
+          label: "2001 - 4000"
+        }, {
+          minValue: 4001,
+          maxValue: 1000000000,
+          symbol: more75,
+          label: "> 3000"
+        }]
+      });
+
+      var seattleLyr = new FeatureLayer({
+        url: "https://services.slip.wa.gov.au/public/rest/services/ABS_Public_Services/ABS_2011_Census_BCP_by_Suburb_SSC/MapServer/41",
+        renderer: renderer,
+        outFields: ["ssc_name", "total_pds_dwellings", "total_pds_persons", "region_id"],
+        popupTemplate: { // autocast as esri/PopupTemplate
+          title: "{ssc_name}",
+          content: "Total Dwellings: {total_pds_dwellings}<br>" +
+            "Total Persons: {total_pds_persons}"
+        },
+        // show only block groups in Seattle
+        // definitionExpression: "City = 'Seattle' AND EDUCBASECY > 0",
+        definitionExpression: "state_name = 'Western Australia'",
+      });
+
+      var map = new Map({
+        basemap: "gray",
+        layers: [seattleLyr]
+      });
+
+      var view = new MapView({
+        container: "viewDiv",
+        map: map,
+        center: [115.75, -31.95],
+        zoom: 10
+      });
+
+    //   view.then(function() {
+    //       seattleLyr.then(function() {
+    //         view.goTo(seattleLyr.fullExtent);
+    //       });
+    //   });
+
+      /******************************************************************
+       *
+       * Add layers to layerInfos on the legend
+       *
+       ******************************************************************/
+
+      var legend = new Legend({
+        view: view,
+        layerInfos: [
+        {
+          layer: seattleLyr,
+        //   title: "% of adults (25+) with a college degree"
+        }]
+      }, "infoDiv");
+
+    });
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+  <div id="infoDiv"></div>
+</body>
+
+</html>

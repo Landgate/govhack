@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WMS GetFeatureInfo (Tile Layer)</title>
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.17.1/css/ol.css" type="text/css">
+    <script src="http://openlayers.org/en/v3.17.1/build/ol.js"></script>
+    <script src="http://openlayers.org/en/v3.17.1/examples/resources/mapbox-streets-v6-style.js"></script>
+  </head>
+  <body>
+    <div id="map" style="width: 70%; height: 100%; display: inline-block;" class="map"></div>
+    <div id="info" style="width: 25%; height: 100%; display: inline-block; float: right;">&nbsp;</div>
+    <div id="doco">
+        Click features on the map to retrieve info about them :)
+    </div>
+    <script>
+      // Your Mapbox access token from http://mapbox.com/ here
+      var key = 'pk.eyJ1Ijoia2VpdGhtb3NzIiwiYSI6ImNpcjV1NXJteDAwOXBnY25mMmVmY2drZDgifQ.P1RCcUjhO19Wlv2Gl-ruSw';
+
+      var mapboxSource = new ol.layer.VectorTile({
+        source: new ol.source.VectorTile({
+            attributions: '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> ' +
+            '© <a href="http://www.openstreetmap.org/copyright">' +
+            'OpenStreetMap contributors</a>',
+            format: new ol.format.MVT(),
+            tileGrid: ol.tilegrid.createXYZ({maxZoom: 22}),
+            tilePixelRatio: 16,
+            url: 'http://{a-d}.tiles.mapbox.com/v4/mapbox.mapbox-streets-v6/' +
+                '{z}/{x}/{y}.vector.pbf?access_token=' + key
+        }),
+        style: createMapboxStreetsV6Style()
+      });
+
+      var wmsSource = new ol.source.TileWMS({
+        url: 'https://services.slip.wa.gov.au/public/services/Landgate_Public_Services/Admin_Public_Services/MapServer/WMSServer',
+        params: {'LAYERS': '6'},
+        crossOrigin: 'anonymous'
+      });
+
+      var wmsLayer = new ol.layer.Tile({
+        source: wmsSource
+      });
+
+      var view = new ol.View({
+        center: ol.proj.fromLonLat([132, -28]),
+        zoom: 4
+      });
+
+      var map = new ol.Map({
+        layers: [mapboxSource, wmsLayer],
+        target: 'map',
+        view: view
+      });
+
+      map.on('singleclick', function(evt) {
+        document.getElementById('info').innerHTML = '';
+        var viewResolution = /** @type {number} */ (view.getResolution());
+        var url = wmsSource.getGetFeatureInfoUrl(
+            evt.coordinate, viewResolution, 'EPSG:3857',
+            {'INFO_FORMAT': 'text/html'});
+        if (url) {
+          document.getElementById('info').innerHTML =
+              '<iframe seamless src="' + url + '"></iframe>';
+        }
+      });
+
+      map.on('pointermove', function(evt) {
+        if (evt.dragging) {
+          return;
+        }
+        var pixel = map.getEventPixel(evt.originalEvent);
+        var hit = map.forEachLayerAtPixel(pixel, function() {
+          return true;
+        });
+        map.getTargetElement().style.cursor = hit ? 'pointer' : '';
+      });
+    </script>
+  </body>
+</html>
