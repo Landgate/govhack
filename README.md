@@ -5,6 +5,8 @@ Hi GovHacker,
 
 Herein you shall find a collection of resources, tips, and examples to help you to get started using data from [data.wa.gov.au](http://data.wa.gov.au/).
 
+**Want code samples? They're over at [landgate.github.io/govhack/](http://landgate.github.io/govhack/)**
+
 # WA Government Open Data
 
 ## What data is available?
