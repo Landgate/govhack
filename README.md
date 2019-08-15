@@ -11,7 +11,7 @@ Herein you shall find a collection of resources, tips, and examples to help you 
 
 ## What data is available?
 
-Over 700 datasets from more than 40 WA government agencies are available at [data.wa.gov.au](http://catalogue.beta.data.wa.gov.au/dataset) for use at GovHack, including:
+Over 1700 datasets from more than 40 WA government agencies are available at [data.wa.gov.au](http://catalogue.data.wa.gov.au/dataset) for use at GovHack, including:
 
 * Property boundaries and sales records
 * A high resolution aerial photo mosaic of Western Australia
@@ -30,7 +30,7 @@ Over 700 datasets from more than 40 WA government agencies are available at [dat
 * Power and water utilities data
 
 ## Help and mentors
-Confused? Can't find data? Contact [our friendly team of mentors](http://portal.govhack.org/regions/western_australia.html#mentors) from across WA government who'll be available on-site in Perth, and around the country on Slack.
+Confused? Can't find data? Contact our friendly team of mentors from across WA government who'll be available on-site in Perth, and around the country on Slack.
 
 ### I can't find the dataset I want
 If you're having trouble finding a dataset don't sweat it! Data.wa.gov.au is still in its infancy and doesn't yet list every dataset in Western Australia. Talk to our team of mentors and they may be able to help you find it - they've years of experience in dealing with and tracking down datasets across all levels of government.
@@ -55,30 +55,17 @@ Throughout data.wa.gov.au and this document you'll find reference to various tec
 
 *[SLIP](http://slip.landgate.wa.gov.au):* The Shared Location Information Platform (SLIP) is a repository of spatial, or location-based, datasets from Western Australian government agencies coordinated by Landgate on behalf of the WA Government. Many of the datasets you find on data.wa.gov.au will be hosted and served out of SLIP
 
-## Public, Subscription, and Restricted datasets
-The goal of data.wa.gov.au is to make all WA government data discoverable from one place - which means we have data listed that isn't 100% open. Broadly speaking there are three different classifications of data -
+## Access to data
 
-*Public:* Datasets that are 100% openly and freely available to use and download under a Creative Commons license.
+Much of the data you'll find in data.wa.gov.au will be open and freely accessible for everyone to use, but there are some cases where you may need to take further steps to access the data. [This](https://toolkit.data.wa.gov.au/hc/en-gb/articles/360000896836-Understanding-access-to-data) article will help you to understand the different kinds of access restrictions you may encounter.
 
-*Subscription:* Datasets that are open to use, but are typically part of a chargeable service.
-
-*Restricted:* Datasets that are restricted for use to authorised government agencies, typically due to their sensitive nature, and for reasons of security and privacy.
-
-The quickest way to tell which category a dataset belongs to is to check the **Data homepage** field of the dataset:
-
-![An example of the 'Data homepage' atttribute on a dataset.](images/slip/example-data-class.png)
-
-If you find a subscription dataset that you'd like to use for GovHack that isn't public don't worry - in some cases we'll be able to give you access for a limited time to use the data in your GovHack project. Get in touch with our team of mentors regarding access.
-
-
+If you find a fees apply dataset that you'd like to use for GovHack that isn't public don't worry - in some cases we'll be able to give you access for a limited time to use the data in your GovHack project. Get in touch with our team of mentors regarding access.
 
 # Using SLIP - A technical guide for developers and hackers
 
 This rest of this document will serve as a brief overview and introduction of the SLIP platform for developers and hackers.
 
-SLIP is a cloud-based platform utilising ESRI's [ArcGIS Server](http://www.esri.com/software/arcgis/arcgisserver) and [PostgreSQL](https://www.postgresql.org/) to provide a range of geospatial data APIs and [map services](http://slip.landgate.wa.gov.au/Pages/Public-Maps.aspx).
-
-More general information about SLIP is available at [slip.landgate.wa.gov.au](http://slip.landgate.wa.gov.au/).
+SLIP is a cloud-based platform utilising ESRI's [ArcGIS Server](http://www.esri.com/software/arcgis/arcgisserver) and [PostgreSQL](https://www.postgresql.org/) to provide a range of geospatial data APIs and map services.
 
 We love user-centred design, so we've written this guide for three different user personas.
 
@@ -87,7 +74,7 @@ We love user-centred design, so we've written this guide for three different use
 3. *[The Developer](#the-developer):* I need to design and create maps or geospatial applications for the web and mobile platforms. I'm a developer and I'm comfortable in the world of APIs and software developmemt. I'd prefer to use other people's data APIs to query and visualise data.
 
 ## Technical assistance with SLIP
-Confused? Don't understand how to do something? Contact [our friendly team of mentors](http://portal.govhack.org/sponsors/landgate.html) who'll be available on-site in Perth, and around the country on Slack.
+Confused? Don't understand how to do something? Contact our friendly team of mentors who'll be available on-site in Perth, and around the country on Slack.
 
 ## An introduction to geospatial data and services
 If you're new to working with spatial data or mapping we highly recommend you spend some time reading [mapschool.io: a free introduction to geo](http://mapschool.io/).
@@ -109,9 +96,7 @@ If your goal is to quickly explore and see what data is available then there are
 If your focus is actually getting at the raw data itself, running queries against it, and analysing it then you have the choice of downloading data and analysing it locally, or using our APIs to do the heavy lifting for you.
 
 ### Downloading data
-Datasets are currently available to download from data.wa.gov.au in two formats - Shapefile and Map Package. These downloads are automatically snapshotted and refreshed on a nightly basis.
-
-![An example list of the different dataset download options from SLIP.](images/slip/example-slip-data-downloads.png)
+Datasets are currently available to download from data.wa.gov.au in various formats which includes Shapefiles and Map Packages. These downloads are automatically snapshotted and refreshed on a nightly basis.
 
 See our [Jaron busting guide](#jargon-busting) for a description of the formats.
 
